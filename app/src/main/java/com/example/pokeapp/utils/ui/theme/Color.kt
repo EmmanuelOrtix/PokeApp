@@ -1,4 +1,4 @@
-package com.example.pokeapp.ui.theme
+package com.example.pokeapp.utils.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
