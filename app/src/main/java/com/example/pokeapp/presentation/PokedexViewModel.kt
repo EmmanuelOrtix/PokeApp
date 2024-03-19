@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pokeapp.data.PokedexModel
 import com.example.pokeapp.domain.PokemonRepository
+import com.example.pokeapp.presentation.model.UiPokedexModel
 import com.example.pokeapp.utils.DataOrException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -20,6 +21,8 @@ class PokedexViewModel @Inject constructor(
         DataOrException(null, true, Exception(""))
     )
 
+    var uiPokedexModel: UiPokedexModel? = null
+
     init {
         getAllPokedex()
     }
@@ -33,9 +36,5 @@ class PokedexViewModel @Inject constructor(
                 data.value.loading = false
             }
         }
-    }
-
-    fun getTotalCountPokemon(): Int? {
-        return data.value.data?.count?.toInt()
     }
 }
